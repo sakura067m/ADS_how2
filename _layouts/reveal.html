@@ -34,7 +34,7 @@
 
     <div class="reveal">
         <div class="slides">
-            <section data-markdown="{{ page.path }}"
+            <section data-markdown="{% if page.src %}{{ page.src }}{{% else %}}{{ page.path }}{% endif %}""
                      data-separator="^\n---\n$"
                      data-separator-vertical="^\n--\n$"
                      data-notes="^Note:"

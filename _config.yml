@@ -1,10 +1,17 @@
+## site variables
 reveal_path: reveal.js/
 reveal_theme_path: reveal.js/dist/theme/
+## files not to be converted
 exclude:
   - Gemfile*
+  - .gitmodules
   - LICENSE
   - README.md
-
+  - slides
+## files keep as is
+keep_files:
+  - slides
+## page variables set by default
 defaults:
   -
     scope:
