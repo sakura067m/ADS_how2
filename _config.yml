@@ -13,7 +13,7 @@ defaults:
     values:
       title: ADS
       layout: "reveal"
-      reveal_theme: night
+      reveal_theme: "night"
       markdown: kramdown
       highlighter: rouge
       markdown_ext: ignoreme
