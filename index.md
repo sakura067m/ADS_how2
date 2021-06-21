@@ -3,8 +3,6 @@ title: front page
 layout: reveal
 ---
 
----
-
 # slide1
 
 ---
