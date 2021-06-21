@@ -1,5 +1,3 @@
-# slide1
-
 ---
-
-# slide2
+src: slides/test.md
+---
