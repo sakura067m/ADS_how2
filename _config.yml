@@ -1,4 +1,3 @@
-reveal_transition: default
 reveal_path: reveal.js/
 reveal_theme_path: reveal.js/dist/theme/
 exclude:
@@ -14,6 +13,7 @@ defaults:
       title: ADS
       layout: "reveal"
       reveal_theme: "night"
+      reveal_transition: default
       markdown: kramdown
       highlighter: rouge
       markdown_ext: ignoreme

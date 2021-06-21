@@ -1,7 +1,7 @@
 ---
 title: front page
 layout: reveal
-reveal_theme: night
+theme: night
 ---
 
 # slide1
