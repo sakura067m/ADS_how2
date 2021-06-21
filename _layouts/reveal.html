@@ -31,8 +31,9 @@
   </head>
 
   <body>
+  <!--  -->
   <!--
-<section data-markdown="{% unless page.src == empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
+<section data-markdown="{% if page.src != empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
          data-separator="^\n---\n$"
          data-separator-vertical="^\n--\n$"
          data-notes="^Note:"
@@ -47,11 +48,13 @@
                      data-separator-vertical="^\n--\n$"
                      data-notes="^Note:"
                      data-charset="utf-8">
+
 {% if page.src != empty %}
                 {% include {{ page.src }} %}
 {% else %}
                 {% include {{ page.path }} %}
 {% endunless %}
+
             </section>
         </div>
     </div>
