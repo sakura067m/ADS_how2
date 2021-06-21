@@ -47,7 +47,7 @@
                      data-separator-vertical="^\n--\n$"
                      data-notes="^Note:"
                      data-charset="utf-8">
-                {% unless %}{% include page.src %}{% else %} {% include page.path %}{% endunless %}
+{% unless page.src == empty %}{% include {{ page.src }} %}{% else %} {% include {{ page.path }} %}{% endunless %}
             </section>
         </div>
     </div>
