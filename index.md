@@ -1,6 +1,6 @@
 ---
 title: front page
-layout: slide
+layout: reveal
 ---
 
 ---
