@@ -19,8 +19,8 @@ defaults:
     values:
       title: ADS
       layout: "reveal"
-      reveal_theme: "black"
-      reveal_transition: default
+      theme: "black"
+      transition: default
       markdown: kramdown
       highlighter: rouge
       markdown_ext: ignoreme

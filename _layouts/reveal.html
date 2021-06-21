@@ -34,7 +34,7 @@
 
     <div class="reveal">
         <div class="slides">
-            <section data-markdown="{% if page.src %}{{ page.src }}{{% else %}}{{ page.path }}{% endif %}""
+            <section data-markdown="{% if page.src %}{{ page.src }}{{% else %}}{{ page.path }}{% endif %}"
                      data-separator="^\n---\n$"
                      data-separator-vertical="^\n--\n$"
                      data-notes="^Note:"
@@ -54,7 +54,7 @@
         // - https://revealjs.com/config/
         Reveal.initialize({
             hash: true,
-				    transition: '{{ page.reveal_transition }}', // default/cube/page/concave/zoom/linear/fade/none
+				    transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
 
             {% if page.reveal_options %}
                 {% if page.reveal_options.first.first %}
