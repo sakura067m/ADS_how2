@@ -13,13 +13,15 @@
 
     <link rel="stylesheet" href="{{ site.reveal_path }}dist/reset.css">
     <link rel="stylesheet" href="{{ site.reveal_path }}dist/reveal.css">
-		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ page.theme }}" id="theme">
+		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ page.theme }}.css" id="theme">
 
     <!-- Theme used for syntax highlighted code -->
 		{% if page.highlight_style_sheet %}
 			{% assign highlight_style_sheet = page.highlight_style_sheet %}
+    {% elsif page.highlightTheme %}
+			{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/{{ page.highlightTheme }}.css {% endcapture %}
 		{% else %}
-			{% capture highlight_style_sheet %}{{ site.reveal_path }}lib/css/zenburn.css {% endcapture %}
+			{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/zenburn.css {% endcapture %}
 		{% endif %}
 		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
@@ -31,7 +33,7 @@
   </head>
 
   <body>
-  <!-- last_modified_at {{ "now" | date: "%Y-%m-%d %H:%M" }}. -->
+  <!-- last_modified_at {{ "now" | timezone: "Asia/Tokyo" | date: "%F %T (%z)" }}. -->
   <!--
 <section data-markdown="{% if page.src != empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
          data-separator="^\n---\n$"
@@ -43,7 +45,7 @@
 
     <div class="reveal">
         <div class="slides">
-            <section data-markdowndata-markdown="{% if page.src != empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
+            <section data-markdown="{% if page.src != empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
                      data-separator="^\n---\n$"
                      data-separator-vertical="^\n--\n$"
                      data-notes="^Note:"

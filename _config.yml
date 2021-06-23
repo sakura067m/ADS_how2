@@ -7,8 +7,6 @@ exclude:
   - .gitmodules
   - LICENSE
   - README.md
-  - slides
-  - reveal.js
   - vendor
   - _scripts
 ## files to be converted
