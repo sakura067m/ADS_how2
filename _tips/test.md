@@ -1,5 +1,8 @@
-# slide1
-
 ---
-
-# slide2
+src: ../slides/Linux101.md
+theme : "night"
+transition: "slide"
+highlightTheme: "monokai"
+slideNumber: true
+mouseWheel: true
+---
