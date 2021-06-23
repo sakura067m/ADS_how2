@@ -36,8 +36,8 @@
   <!-- last_modified_at {{ "now" | timezone: "Asia/Tokyo" | date: "%F %T (%z)" }}. -->
   <!--
 <section data-markdown="{% if page.src != empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
-         data-separator="^\n---\n$"
-         data-separator-vertical="^\n--\n$"
+         data-separator="^\r?\n---\r?\n$"
+         data-separator-vertical="^\r?\n--\r?\n$"
          data-notes="^Note:"
          data-charset="utf-8">
 {{ page.content }}
@@ -46,8 +46,8 @@
     <div class="reveal">
         <div class="slides">
             <section data-markdown="{% if page.src != empty %}{{ page.src }}{% else %}{{ page.path }}{% endif %}"
-                     data-separator="^\n---\n$"
-                     data-separator-vertical="^\n--\n$"
+                     data-separator="^\r?\n---\r?\n$"
+                     data-separator-vertical="^\r?\n--\r?\n$"
                      data-notes="^Note:"
                      data-charset="utf-8">
             </section>
@@ -65,6 +65,8 @@
         Reveal.initialize({
             hash: true,
 				    transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
+            {% if page.slideNumber %}slideNumber: {{ page.slideNumber }},{% endif %}
+            {% if page.mouseWheel %}mouseWheel: {{ page.mouseWheel }},{% endif %}
 
             {% if page.reveal_options %}
                 {% if page.reveal_options.first.first %}
