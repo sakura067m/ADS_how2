@@ -3,9 +3,15 @@
   <head>
     <meta charset="utf-8">
 
-    {% if page.title %}<title>{{ page.title }}</title>{% endif %}
-    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
-		{% if page.author %}<meta name="author" content="{{ page.author }}">{% endif %}
+{% if page.title %}
+    <title>{{ page.title }}</title>
+{% endif %}
+{% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+{% endif %}
+{% if page.author %}
+    <meta name="author" content="{{ page.author }}">
+{% endif %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -17,13 +23,13 @@
     <link rel="stylesheet" href="{% link /css/reveal_custom.css %}">
 
     <!-- Theme used for syntax highlighted code -->
-		{% if page.highlight_style_sheet %}
-			{% assign highlight_style_sheet = page.highlight_style_sheet %}
-    {% elsif page.highlightTheme %}
-			{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/{{ page.highlightTheme }}.css {% endcapture %}
-		{% else %}
-			{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/zenburn.css {% endcapture %}
-		{% endif %}
+{% if page.highlight_style_sheet %}
+{% assign highlight_style_sheet = page.highlight_style_sheet %}
+{% elsif page.highlightTheme %}
+{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/{{ page.highlightTheme }}.css {% endcapture %}
+{% else %}
+{% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/zenburn.css {% endcapture %}
+{% endif %}
 		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -61,20 +67,24 @@
         Reveal.initialize({
             hash: true,
 				    transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
-            {% if page.slideNumber %}slideNumber: {{ page.slideNumber }},{% endif %}
-            {% if page.mouseWheel %}mouseWheel: {{ page.mouseWheel }},{% endif %}
+{% if page.slideNumber %}
+            slideNumber: {{ page.slideNumber }},
+{% endif %}
+{% if page.mouseWheel %}
+            mouseWheel: {{ page.mouseWheel }},
+{% endif %}
 
-            {% if page.reveal_options %}
-                {% if page.reveal_options.first.first %}
-                    // Reveal options generated from mapping
-                    {% for option in page.reveal_options %}
-                        {{ option[0] }}: "{{ option[1] }}",
-                    {% endfor %}
-                {% else %}
-                // Reveal options generated from a list of strings
-                {{ page.reveal_options | append:',' }}
-                {% endif %}
-            {% endif %}
+{% if page.reveal_options %}
+{% if page.reveal_options.first.first %}
+            // Reveal options generated from mapping
+{% for option in page.reveal_options %}
+            {{ option[0] }}: "{{ option[1] }}",
+{% endfor %}
+{% else %}
+            // Reveal options generated from a list of strings
+            {{ page.reveal_options | append:',' }}
+{% endif %}
+{% endif %}
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
