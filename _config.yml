@@ -1,4 +1,5 @@
 ## site variables
+timezone: Asia/Tokyo
 reveal_path: /reveal.js/
 reveal_theme_path: /reveal.js/dist/theme/
 ## files not to be hosted
