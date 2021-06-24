@@ -17,10 +17,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <link rel="stylesheet" href="{{ site.reveal_path }}dist/reset.css">
-    <link rel="stylesheet" href="{{ site.reveal_path }}dist/reveal.css">
-    <link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ page.theme }}.css" id="theme">
-    <link rel="stylesheet" href="{% link /css/reveal_custom.css %}">
+    <link rel="stylesheet" href={{ "{{ site.reveal_path }}dist/reset.css"  | relative_url }}>
+    <link rel="stylesheet" href={{ "{{ site.reveal_path }}dist/reveal.css" | relative_url }}>
+    <link rel="stylesheet" href={{ "{{ site.reveal_theme_path }}{{ page.theme }}.css" | relative_url }} id="theme">
+    <link rel="stylesheet" href={{ "/css/reveal_custom.css" | relative_url }}>
 
     <!-- Theme used for syntax highlighted code -->
 {% if page.highlight_style_sheet %}
@@ -30,7 +30,7 @@
 {% else %}
 {% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/zenburn.css {% endcapture %}
 {% endif %}
-    <link rel="stylesheet" href="{{ highlight_style_sheet }}">
+    <link rel="stylesheet" href={{ "{{ highlight_style_sheet }}" | relative_url }}>
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
@@ -58,10 +58,10 @@
         </div>
     </div>
 
-    <script src="{{ site.reveal_path }}dist/reveal.js"></script>
-    <script src="{{ site.reveal_path }}plugin/notes/notes.js"></script>
-    <script src="{{ site.reveal_path }}plugin/markdown/markdown.js"></script>
-    <script src="{{ site.reveal_path }}plugin/highlight/highlight.js"></script>
+    <script src={{ "{{ site.reveal_path }}dist/reveal.js" | relative_url }}></script>
+    <script src={{ "{{ site.reveal_path }}plugin/notes/notes.js" | relative_url }}></script>
+    <script src={{ "{{ site.reveal_path }}plugin/markdown/markdown.js" | relative_url }}></script>
+    <script src={{ "{{ site.reveal_path }}plugin/highlight/highlight.js" | relative_url }}></script>
     <script>
         // More info about initialization & config:
         // - https://revealjs.com/initialization/
