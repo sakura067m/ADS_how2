@@ -14,12 +14,12 @@
 {% endif %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <link rel="stylesheet" href="{{ site.reveal_path }}dist/reset.css">
     <link rel="stylesheet" href="{{ site.reveal_path }}dist/reveal.css">
-		<link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ page.theme }}.css" id="theme">
+    <link rel="stylesheet" href="{{ site.reveal_theme_path }}{{ page.theme }}.css" id="theme">
     <link rel="stylesheet" href="{% link /css/reveal_custom.css %}">
 
     <!-- Theme used for syntax highlighted code -->
@@ -30,12 +30,12 @@
 {% else %}
 {% capture highlight_style_sheet %}{{ site.reveal_path }}plugin/highlight/zenburn.css {% endcapture %}
 {% endif %}
-		<link rel="stylesheet" href="{{ highlight_style_sheet }}">
+    <link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="{{ site.reveal_path }}css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+    <script>
+      document.write( '<link rel="stylesheet" href="{{ site.reveal_path }}css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
 
   </head>
 
@@ -52,7 +52,7 @@
                      data-charset="utf-8">
 
 {{ page.content }}{% comment%} page.content will not be parsed {% endcomment%}
-{% comment%} {{ content }} content will not be parsed {% endcomment%}
+{% comment%} {{ content }} content is parsed {% endcomment%}
 
             </section>
         </div>
@@ -68,7 +68,7 @@
         // - https://revealjs.com/config/
         Reveal.initialize({
             hash: true,
-				    transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
+            transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
 {% if page.slideNumber %}
             slideNumber: {{ page.slideNumber }},
 {% endif %}
