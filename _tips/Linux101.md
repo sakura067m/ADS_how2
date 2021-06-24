@@ -5,12 +5,6 @@ highlightTheme: "monokai"
 slideNumber: true
 title: "ザックリLinux"
 mouseWheel: true
-<<<<<<< HEAD
-<<<<<<< Updated upstream
----
-=======
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 ---
 
 # DS実習102
@@ -77,18 +71,12 @@ echo $hoge  #-> foo
 ***
 環境変数を設定するにはexportコマンドを使用する  
 Linuxではログイン時やシェルの起動時にシステム設定ファイルが自動実行されるので、そこに環境変数を設定するコマンドが書かれていることが多い
-<<<<<<< HEAD
 <!-- {% raw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 ```
 # gemのパスを通す(インストール及びGEM_HOMEの設定を先にやっておく)
 export PATH=${GEM_HOME}/bin:$PATH
 ```
-<<<<<<< HEAD
 <!-- {% endraw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 
 ---
 
@@ -106,20 +94,12 @@ user@ADS:~$
 
 ### プロンプトの設定例
 ***
-<<<<<<< HEAD
 <!-- {% raw %} -->
 ```
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 ```
 最初の${}は飛ばして
 <!-- {% endraw %} -->
-=======
-
-```
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-```
-最初の${}は飛ばして  
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 
 色、ユーザー名、@マーク、ホスト名、色リセット、  
 コロン(:)、色、現在地、色終了、$マーク+空白  
@@ -197,20 +177,14 @@ Linuxでは入出力等に用いるストリームもファイルとしてシス
 
 <div class=.col style="flex: init;" markdown=1>
 
-<<<<<<< HEAD
 <!-- {% raw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 - | (pipe)
 - \> (redirect)
 - ' ' / " "
 - `` (backquote)
 - () / {}
 - <span>$</span>() / <span>$</span>{}
-<<<<<<< HEAD
 <!-- {% endraw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 
 </div>
 </div>
@@ -430,27 +404,18 @@ $(hoge | $(fugafuga))
 
 --
 
-<<<<<<< HEAD
 <!-- {% raw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 ### ( ) / <span>{ }</span>
 ***
 (): parenthesis, パーレン; サブシェルで実行  
 {}: braces, ブレース; カレントシェルで実行  
-<<<<<<< HEAD
 <!-- {% endraw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 
 サブシェルで実行すると変数は引き継ぐけど変更の再反映はしない  
 カレントシェルで実行すると変更が反映される
 <!-- .element: class="fragment current-only" -->
 
-<<<<<<< HEAD
 <!-- {% raw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 ```
 user@ADS:~$ (echo "変更前: $HOGE"; HOGE='foo'; echo "変更後: $HOGE")
 変更前: 
@@ -460,20 +425,14 @@ user@ADS:~$ { echo "変更前: $HOGE"; HOGE='foo'; echo "変更後: $HOGE"; }
 変更後: foo
 ```
 <!-- .element: class="fragment fadeup" -->
-<<<<<<< HEAD
 <!-- {% endraw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 
 tips: bashだとブレース展開という機能がある
 <!-- .element: class="fragment fadeup" -->
 
 --
 
-<<<<<<< HEAD
 <!-- {% raw %} -->
-=======
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
 ### <span>$</span>( ) / <span>${ }</span>
 ***
 <span>$</span>( ): 丸括弧の中を実行して結果を文字列として返す
@@ -488,7 +447,3 @@ hogefuga  # {}無しだと${hogefuga}を参照する
 <<<<<<< HEAD
 ```
 <!-- {% endraw %} -->
->>>>>>> Stashed changes
-=======
-```
->>>>>>> eecd71d131f2d908068cbf0b7d127e65f77184cc
