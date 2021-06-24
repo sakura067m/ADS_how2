@@ -15,7 +15,6 @@ include:
   - _tips
 ## files keep as is
 keep_files:
-  - slides
   - reveal.js
 ## page variables set by default
 defaults:
@@ -30,3 +29,10 @@ defaults:
       markdown: kramdown
       highlighter: rouge
       markdown_ext: ignoreme
+  -
+    scope:
+      path: _tips
+    values:
+      layout: reveal
+      theme: night
+      transition: slide
