@@ -17,7 +17,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    <link rel="stylesheet" href="{{ site.reveal_path | relative_url }}dist/reset.css">
+    {{ "dist/reset.css" | prepend: site.reveal_path | relative_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ site.reveal_path | relative_url }}dist/reveal.css">
     <link rel="stylesheet" href="{{ site.reveal_theme_path | relative_url }}{{ page.theme }}.css" id="theme">
     <link rel="stylesheet" href="{{ "/css/reveal_custom.css" | relative_url }}">
