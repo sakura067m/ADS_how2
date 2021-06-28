@@ -17,10 +17,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-    {{ "dist/reset.css" | prepend: site.reveal_path | relative_url | stylesheet_tag }}
-    <link rel="stylesheet" href="{{ site.reveal_path | relative_url }}dist/reveal.css">
-    <link rel="stylesheet" href="{{ site.reveal_theme_path | relative_url }}{{ page.theme }}.css" id="theme">
-    <link rel="stylesheet" href="{{ "/css/reveal_custom.css" | relative_url }}">
+    <link rel="stylesheet" href="{{ 'dist/reset.css' | prepend: site.reveal_path | relative_url }}">
+    <link rel="stylesheet" href="{{ 'dist/reveal.css' | prepend: site.reveal_path | relative_url }}">
+    <link rel="stylesheet" href="{{ page.theme | append: '.css' | prepend: site.reveal_theme_path | relative_url }}" id="theme">
+    <link rel="stylesheet" href="{{ '/css/reveal_custom.css' | relative_url }}">
 
     <!-- Theme used for syntax highlighted code -->
 {% if page.highlight_style_sheet %}
@@ -51,8 +51,11 @@
                      data-notes="^Note:"
                      data-charset="utf-8">
 
-{{ page.content }}{% comment%} page.content will not be parsed {% endcomment%}
-{% comment%} {{ content }} content is parsed {% endcomment%}
+{{ content }}
+{% comment%}
+    page.content may or may not be parsed
+    content is parsed
+{% endcomment%}
 
             </section>
         </div>
