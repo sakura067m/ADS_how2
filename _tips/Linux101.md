@@ -444,6 +444,5 @@ user@ADS:~$ ls $(which python)
 ```
 user@ADS:~$ echo ${hoge}fuga  # $hoge=hoge
 hogefuga  # {}無しだと${hogefuga}を参照する
-<<<<<<< HEAD
 ```
 <!-- {% endraw %} -->
