@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
 
-{% if page.title %}
+{%- if page.title %}
     <title>{{ page.title }}</title>
-{% endif %}
-{% if page.description %}
+{%- endif -%}
+{%- if page.description %}
     <meta name="description" content="{{ page.description }}">
-{% endif %}
-{% if page.author %}
+{% endif -%}
+{%- if page.author %}
     <meta name="author" content="{{ page.author }}">
-{% endif %}
+{%- endif %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -23,13 +23,13 @@
     <link rel="stylesheet" href="{{ '/css/reveal_custom.css' | relative_url }}">
 
     <!-- Theme used for syntax highlighted code -->
-{% if page.highlight_style_sheet %}
-{% assign highlight_style_sheet = page.highlight_style_sheet %}
-{% elsif page.highlightTheme %}
-{% capture highlight_style_sheet %}{{ site.reveal_path | relative_url }}plugin/highlight/{{ page.highlightTheme }}.css {% endcapture %}
-{% else %}
-{% capture highlight_style_sheet %}{{ site.reveal_path | relative_url }}plugin/highlight/zenburn.css {% endcapture %}
-{% endif %}
+{%- if page.highlight_style_sheet -%}
+{%- assign highlight_style_sheet = page.highlight_style_sheet -%}
+{%- elsif page.highlightTheme -%}
+{%- capture highlight_style_sheet %}{{ site.reveal_path | relative_url }}plugin/highlight/{{ page.highlightTheme }}.css {% endcapture %}
+{%- else -%}
+{%- capture highlight_style_sheet %}{{ site.reveal_path | relative_url }}plugin/highlight/zenburn.css {% endcapture %}
+{%- endif %}
     <link rel="stylesheet" href="{{ highlight_style_sheet }}">
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -41,8 +41,6 @@
 
   <body>
   <!-- last_modified_at {{ "now" | date: "%F %T (%z)" }}. -->
-
-
     <div class="reveal">
         <div class="slides">
             <section data-markdown
@@ -51,12 +49,15 @@
                      data-notes="^Note:"
                      data-charset="utf-8">
 
-{{ content }}
-{% comment%}
+{% if page.bypass -%}
+{{ page.bypassed }}
+{% else -%}
+{{ page.content }}
+{%- endif %}
+{%- comment -%}
     page.content may or may not be parsed
     content is parsed
-{% endcomment%}
-
+{%- endcomment %}
             </section>
         </div>
     </div>
@@ -74,22 +75,22 @@
             transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
 {% if page.slideNumber %}
             slideNumber: {{ page.slideNumber }},
-{% endif %}
-{% if page.mouseWheel %}
+{% endif -%}
+{%- if page.mouseWheel %}
             mouseWheel: {{ page.mouseWheel }},
-{% endif %}
+{% endif -%}
 
-{% if page.reveal_options %}
-{% if page.reveal_options.first.first %}
+{%- if page.reveal_options -%}
+{%- if page.reveal_options.first.first %}
             // Reveal options generated from mapping
-{% for option in page.reveal_options %}
+{%- for option in page.reveal_options %}
             {{ option[0] }}: "{{ option[1] }}",
-{% endfor %}
-{% else %}
+{%- endfor %}
+{%- else %}
             // Reveal options generated from a list of strings
             {{ page.reveal_options | append:',' }}
-{% endif %}
-{% endif %}
+{% endif -%}
+{% endif -%}
 
             // Learn about plugins: https://revealjs.com/plugins/
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]

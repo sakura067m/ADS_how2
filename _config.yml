@@ -37,6 +37,7 @@ defaults:
       markdown: kramdown
       highlighter: rouge
       markdown_ext: ignoreme
+      bypass: false
   -
     scope:
       path: ""
