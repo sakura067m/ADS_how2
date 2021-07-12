@@ -179,7 +179,7 @@ Linuxでは入出力等に用いるストリームもファイルとしてシス
 
 <!-- {% raw %} -->
 - | (pipe)
-- &gt; (redirect)
+- \> (redirect)
 - ' ' / " "
 - `` (backquote)
 - () / {}
