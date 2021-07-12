@@ -179,7 +179,7 @@ Linuxでは入出力等に用いるストリームもファイルとしてシス
 
 <!-- {% raw %} -->
 - | (pipe)
-- \> (redirect)
+- &gt; (redirect)
 - ' ' / " "
 - `` (backquote)
 - () / {}
@@ -364,16 +364,16 @@ x86_64-linux-gnu-python3.8-config
 
 ### \> (redirect)
 ***
-リダイレクトは不等号の大きい方から小さい方にデータ列を渡す  
-\>だけでなく<もある他、ヒアドキュメント、ヒアストリングなどもあり、
+不等号の大きい方から小さい方にデータ列を渡す  
+リダイレクトには、\>だけでなく&lt;もある  
+ヒアドキュメント、ヒアストリングなどもある  
 各プロセスは標準入力、標準出力、標準エラー出力をもつ
 ```
 # 文字列"something special"を出力して、"arigatai.txt"に書き込む
 user@ADS:~$ echo something special > arigatai.txt
 ```
 コマンドの結果は文字列で返ってくる場合が多く、  
-固定文字列と結合して出力、等の使い方をする
-<!-- .element: class="fragment current-only" -->
+固定文字列と結合して出力、等の使い方をする<!-- .element: class="fragment current-only" -->
 
 --
 
@@ -425,6 +425,7 @@ user@ADS:~$ { echo "変更前: $HOGE"; HOGE='foo'; echo "変更後: $HOGE"; }
 変更後: foo
 ```
 <!-- .element: class="fragment fadeup" -->
+
 <!-- {% endraw %} -->
 
 tips: bashだとブレース展開という機能がある

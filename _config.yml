@@ -2,13 +2,17 @@
 timezone: Asia/Tokyo
 reveal_path: /reveal.js/
 reveal_theme_path: /reveal.js/dist/theme/
+reveal_print_theme_path: /reveal.js/css/print/
 ## plugins to enable
 ##plugins:
 ##  - 
 ## collections: start with _
-collections:
-  tips:
-    output: true
+##
+## sass
+# sass:
+#   # sass_dir: _sass
+#   load_paths:
+#     - 
 ## files not to be hosted
 exclude:
   - Gemfile*
@@ -22,7 +26,9 @@ exclude:
 ##  - some
 ## files keep as is
 keep_files:
-  - reveal.js
+  - /reveal.js/dist
+  - /reveal.js/js
+  - /reveal.js/plugin
 ## page variables set by default
 defaults:
   -
@@ -32,6 +38,7 @@ defaults:
       title: ADS
       layout: reveal
       theme: black
+      papertheme: white
       transition: default
       markdown: kramdown
       highlighter: rouge
@@ -39,8 +46,7 @@ defaults:
       bypass: false
   -
     scope:
-      path: ""
-      type: tips
+      path: "tips"
     values:
       bypass: true
       layout: reveal

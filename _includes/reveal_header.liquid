@@ -1,0 +1,27 @@
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="{{ 'dist/reset.css' | prepend: site.reveal_path | relative_url }}">
+    <link rel="stylesheet" href="{{ 'dist/reveal.css' | prepend: site.reveal_path | relative_url }}">
+    <link rel="stylesheet" href="{{ 'paper.css' | prepend: '/css/' | relative_url }}" type="text/css" media="print">
+    <link rel="stylesheet" href="{{ page.theme | append: '.css' | prepend: site.reveal_theme_path | relative_url }}" id="theme">
+    <link rel="stylesheet" href="{{ '/css/reveal_custom.css' | relative_url }}">
+
+    <!-- Theme used for syntax highlighted code -->
+{%- if page.highlight_style_sheet -%}
+{%- assign highlight_style_sheet = page.highlight_style_sheet -%}
+{%- elsif page.highlightTheme -%}
+{%- capture highlight_style_sheet %}{{ site.reveal_path | relative_url }}plugin/highlight/{{ page.highlightTheme }}.css {% endcapture %}
+{%- else -%}
+{%- capture highlight_style_sheet %}{{ site.reveal_path | relative_url }}plugin/highlight/zenburn.css {% endcapture %}
+{%- endif %}
+    <link rel="stylesheet" href="{{ highlight_style_sheet }}">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        const p = new URLSearchParams(window.location.search);
+        if (!p.has("print-pdf")){
+            document.write('<link rel="stylesheet" href="{{ page.papertheme | append: ".css" | prepend: site.reveal_theme_path | relative_url }}" type="text/css" media="print">');
+        }
+    </script>
