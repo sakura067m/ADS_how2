@@ -1,0 +1,29 @@
+---
+layout: reveal_base
+---
+
+  <!-- last_modified_at {{ "now" | date: "%F %T (%z)" }}. -->
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown
+                     data-separator="^\r?\n---\r?\n$"
+                     data-separator-vertical="^\r?\n--\r?\n$"
+                     data-notes="^Note:"
+                     data-charset="utf-8">
+
+{% if page.bypass -%}{% raw %}<!-- {::nomarkdown} -->{% endraw %}{% endif %}
+{{ page.content }}
+{% if page.bypass -%}{% raw %}<!-- {:/nomarkdown} -->{% endraw %}{% endif %}
+{%- comment -%}
+    page.content may or may not be parsed
+        document/collections: may be parsed
+        convertible/page: may not be parsed, also not for liquid
+    content is parsed
+    If you need raw markdown but liquid rendered content,
+    use _layouts/reveal_bypass with _plugins/bypass, not with --safe mode.
+    On GitHub, --safe is always true, so you must build the site yourself.
+{%- endcomment %}
+
+            </section>
+        </div>
+    </div>

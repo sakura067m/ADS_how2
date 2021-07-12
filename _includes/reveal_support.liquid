@@ -1,0 +1,36 @@
+    <script src="{{ site.reveal_path | relative_url }}dist/reveal.js"></script>
+    <script src="{{ site.reveal_path | relative_url }}plugin/zoom/zoom.js"></script>
+    <script src="{{ site.reveal_path | relative_url }}plugin/notes/notes.js"></script>
+    <script src="{{ site.reveal_path | relative_url }}plugin/search/search.js"></script>
+    <script src="{{ site.reveal_path | relative_url }}plugin/markdown/markdown.js"></script>
+    <script src="{{ site.reveal_path | relative_url }}plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            transition: '{{ page.transition }}', // default/cube/page/concave/zoom/linear/fade/none
+{%- if page.slideNumber %}
+            slideNumber: {{ page.slideNumber }},
+{%- endif %}
+{%- if page.mouseWheel %}
+            mouseWheel: {{ page.mouseWheel }},
+{%- endif -%}
+
+{%- if page.reveal_options -%}
+{%- if page.reveal_options.first.first %}
+            // Reveal options generated from mapping
+{%- for option in page.reveal_options %}
+            {{ option[0] }}: "{{ option[1] }}",
+{%- endfor %}
+{%- else %}
+            // Reveal options generated from a list of strings
+            {{ page.reveal_options | append:',' }}
+{%- endif %}
+{%- endif %}
+
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight ]
+        });
+    </script>
