@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+
+{%- if page.title %}
+    <title>{{ page.title }}</title>
+{%- endif -%}
+{%- if page.description %}
+    <meta name="description" content="{{ page.description }}">
+{% endif -%}
+{%- if page.author %}
+    <meta name="author" content="{{ page.author }}">
+{%- endif %}
+
+{% include reveal_header.liquid %}
+
+  </head>
+
+  <body>
+{{ content }}
+
+{% include reveal_support.liquid %}
+
+  </body>
+</html>

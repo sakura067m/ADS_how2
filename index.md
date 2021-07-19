@@ -1,12 +1,20 @@
 ---
-title: front page
-layout: reveal
----
-
+title: top
+bypass: true
 ---
 
 # slide1
+***
 
 ---
 
-# slide2
+
+## slide2
+***
+
+---
+
+## slide3
+***
+
+---

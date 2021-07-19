@@ -1,18 +1,56 @@
+## site variables
+timezone: Asia/Tokyo
+reveal_path: /reveal.js/
+reveal_theme_path: /reveal.js/dist/theme/
+reveal_print_theme_path: /reveal.js/css/print/
+## plugins to enable
+##plugins:
+##  - 
+## collections: start with _
+##
+## sass
+# sass:
+#   # sass_dir: _sass
+#   load_paths:
+#     - 
+## files not to be hosted
 exclude:
   - Gemfile*
+  - .gitmodules
   - LICENSE
   - README.md
-
+  - vendor
+  - _scripts
+## files to be converted
+##include:
+##  - some
+## files keep as is
+keep_files:
+  - /reveal.js/dist
+  - /reveal.js/js
+  - /reveal.js/plugin
+## page variables set by default
 defaults:
   -
     scope:
       path: ""
     values:
       title: ADS
-      layout: "reveal"
-      reveal_transition: default
-      reveal_path: reveal.js/
-      reveal_theme_path: reveal.js/dist/theme/
+      layout: reveal
+      theme: black
+      papertheme: white
+      transition: default
       markdown: kramdown
       highlighter: rouge
       markdown_ext: ignoreme
+      bypass: false
+  -
+    scope:
+      path: "tips"
+    values:
+      bypass: true
+      layout: reveal
+      theme: night
+      transition: slide
+
+theme: jekyll-theme-dinky
