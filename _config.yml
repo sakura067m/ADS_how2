@@ -52,3 +52,5 @@ defaults:
       layout: reveal
       theme: night
       transition: slide
+
+theme: jekyll-theme-dinky
