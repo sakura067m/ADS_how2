@@ -1,20 +1,7 @@
 ---
 title: top
-bypass: true
+layout: default
+theme: jekyll-theme-dinky
 ---
 
-# slide1
-***
-
----
-
-
-## slide2
-***
-
----
-
-## slide3
-***
-
----
+{% include_relative README.md %}
